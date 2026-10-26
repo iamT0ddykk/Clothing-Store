@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 5s ease-in infinite;
+}
+
