@@ -1,8 +1,18 @@
+"use client";
 import { Card } from "./Components/Card";
 import { Container } from "./Components/Container";
 import { Heading } from "./Components/Heading";
 
 export default function Home() {
+  async function getRoupas(id: number) {
+    const roupa = await fetch(`https://dummyjson.com/products/${id}`);
+
+    const data = await roupa.json();
+
+    return data.images[0]
+  }
+
+  getRoupas(1);
   return (
     <>
       <Heading />
@@ -21,7 +31,7 @@ export default function Home() {
         </div>
         <div className="flex justify-center ">
           {" "}
-          <div className="grid grid-cols-3 grid-rows-2 bg-amber-300 gap-5">
+          <div className="grid grid-cols-3 grid-rows-2 gap-5">
             <Card
               img="/imagem.png"
               title="Sueter laranja"

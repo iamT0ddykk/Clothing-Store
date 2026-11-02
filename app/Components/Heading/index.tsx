@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { PiShoppingCartLight } from "react-icons/pi";
 
@@ -7,8 +8,9 @@ export function Heading() {
     <>
       <header className="bg-slate-200 h-20 flex  items-center">
         <div className=" p-7 flex justify-between items-center w-full">
-          <h1 className="font-bold text-2xl">ClothingShop</h1>
-
+          <Link href={"/"}>
+            <h1 className="font-bold text-2xl">ClothingShop</h1>
+          </Link>
           <ul className="flex gap-5">
             <li>Home</li>
             <li>Shop</li>
