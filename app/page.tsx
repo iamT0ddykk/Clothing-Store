@@ -1,7 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
+
+/* eslint-disable @next/next/no-img-element */
 import { Card } from "./Components/Card";
 import { Container } from "./Components/Container";
+import { Footer } from "./Components/Footer";
 import { Heading } from "./Components/Heading";
 import { itemsInfo } from "./items/itemsInfo";
 
@@ -15,10 +17,10 @@ export default function Home() {
       <Container>
         {" "}
         <div className=" mt-5 p-5 flex items-center justify-between">
-          <div>
+          <div className="">
             {" "}
             <h1 className="font-bold text-7xl">Simple e</h1>
-            <span className="font-bold text-7xl">Bonito.</span>
+            <span className="font-bold text-7xl text-[#B33A4B]">Bonito.</span>
           </div>
 
           <div>
@@ -27,7 +29,10 @@ export default function Home() {
         </div>
         <div className="flex justify-center ">
           {" "}
-          <div className="grid grid-cols-3 grid-rows-2 gap-5">
+          <div
+            id="produtos"
+            className="grid grid-cols-1 grid-rows-2 gap-5 scroll-mt-24 sm:grid-cols-3"
+          >
             {itemsInfo.map((item) => {
               return (
                 <Card
@@ -42,10 +47,8 @@ export default function Home() {
             })}
           </div>
         </div>
-        <footer className="flex items-center justify-center text-slate-400">
-          Shop
-        </footer>
       </Container>
+      <Footer />
     </>
   );
 }

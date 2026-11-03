@@ -1,8 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { useState } from "react";
-import { IoMdHeartEmpty } from "react-icons/io";
 import { PiShoppingCartLight } from "react-icons/pi";
+import { FavoriteButton } from "@/app/Components/FavoriteButton";
 
 type cardProps = {
   img: string;
@@ -13,16 +12,6 @@ type cardProps = {
 };
 
 export function Card(props: cardProps) {
-  const [color, setColor] = useState("#ed8780");
-
-  function vecor() {
-    if (color === "#ed8780") {
-      setColor("red");
-    } else {
-      setColor("#ed8780");
-    }
-  }
-
   return (
     <article className="w-60 overflow-hidden rounded-lg border border-[#dce5e7] bg-white text-[#202b2e] transition-shadow duration-200 hover:shadow-lg hover:shadow-[#202b2e]/10">
       <div className="relative">
@@ -38,14 +27,10 @@ export function Card(props: cardProps) {
             />
           </div>
         </Link>
-        <button
-          onClick={() => vecor()}
-          type="button"
-          aria-label={`Adicionar ${props.title} aos favoritos`}
+        <FavoriteButton
+          title={props.title}
           className="absolute right-3 top-3 grid size-10 place-items-center rounded-full bg-white text-black shadow-sm transition-colors hover:bg-[#6b2828] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#28616b]"
-        >
-          <IoMdHeartEmpty size={22} color={color} />
-        </button>
+        />
       </div>
 
       <div className="p-4">
