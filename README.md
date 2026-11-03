@@ -1,52 +1,60 @@
 # ClothingShop
 
 <p align="center">
-  Uma vitrine de moda com foco nas peças, navegação simples e uma identidade visual limpa.
+  Uma vitrine de moda responsiva com catálogo de peças e páginas de produto.
 </p>
 
 <p align="center">
-  <strong>Next.js 16 · React 19 · TypeScript · Tailwind CSS 4</strong>
+  Next.js 16 · React 19 · TypeScript · Tailwind CSS 4
 </p>
+
+[Telas](#telas) · [Funcionalidades](#funcionalidades) · [Tecnologias](#tecnologias) · [Como executar](#como-executar) · [Estrutura](#estrutura)
 
 ## Telas
 
+## Funcionalidades
+
 ### Página inicial
 
-<p align="center">
-  <img src="./public/readme-home.png" alt="Página inicial da ClothingShop com a vitrine de produtos" width="100%" />
-</p>
+- Catálogo responsivo com seis produtos definidos em `app/items/itemsInfo.ts`.
+- Página de detalhes por produto em `/clothes/[id]`.
+- Botão de favorito com alternância visual.
+- Navegação entre a página inicial e a lista de produtos.
 
-### Detalhe do produto
+> [!NOTE]
+> Os favoritos mantêm apenas estado local. Carrinho e compra ainda não têm fluxo funcional. As fotos dos produtos vêm de URLs externas e precisam de conexão com a internet.
 
 <p align="center">
   <img src="./public/readme-product.png" alt="Página de detalhes da Jaqueta Continental" width="100%" />
-</p>
-
-## O projeto
-
-- Vitrine responsiva com catálogo de produtos.
+- [Next.js 16.4](https://nextjs.org/) com App Router
+- [React 19.3](https://react.dev/)
+- [TypeScript 5](https://www.typescriptlang.org/)
+- [Tailwind CSS 4](https://tailwindcss.com/)
+- [React Icons 5](https://react-icons.github.io/react-icons/)
 - Página individual de produto em `/clothes/[id]`.
 - Botão de favorito com alternância visual local.
 - Imagens de produto carregadas de URLs externas.
-
+Pré-requisitos: Node.js e npm instalados.
 > Carrinho e compra ainda são elementos visuais, sem fluxo de checkout implementado.
 
 ## Tecnologias
 
 - [Next.js 16](https://nextjs.org/) com App Router
 - [React 19](https://react.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
+  Abra [http://localhost:3000](http://localhost:3000) no navegador. O catálogo não precisa de configuração de ambiente.
 - [Tailwind CSS 4](https://tailwindcss.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
 
-## Como executar
+| Comando         | Descrição                            |
+| --------------- | ------------------------------------ |
+| `npm run dev`   | Inicia o servidor de desenvolvimento |
+| `npm run lint`  | Executa o ESLint                     |
+| `npm run build` | Gera a build de produção             |
+| `npm run start` | Inicia a aplicação compilada         |
 
-Requisitos: Node.js e npm.
-
-```bash
-npm install
 npm run dev
-```
+
+````
 
 Abra [http://localhost:3000](http://localhost:3000) no navegador.
 
@@ -78,4 +86,4 @@ public/
 ├── imagem.png
 ├── readme-home.png
 └── readme-product.png
-```
+````
