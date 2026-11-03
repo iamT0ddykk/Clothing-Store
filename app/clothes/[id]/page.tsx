@@ -1,24 +1,39 @@
+/* eslint-disable @next/next/no-img-element */
 import { Container } from "@/app/Components/Container";
 import { Heading } from "@/app/Components/Heading";
+import { Suspense } from "react";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { PiShoppingCartLight } from "react-icons/pi";
+import { itemsInfo } from "@/app/items/itemsInfo";
 
-export default function Page() {
+export const instant = false;
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const item = itemsInfo.find((item) => item.id === id);
+
   return (
     <>
       <Heading />
       <Container>
-        <div className="flex justify-center">
+        <div className="flex justify-center m-5">
           <div className="bg-slate-300 w-120 rounded-2xl cursor-pointer">
             {" "}
             <div>
               <div>
-                
-                <img src="/imagem.png" alt="" />
+                <img src={item?.img} alt="" />
               </div>
-              <div className="text-[20px]">titulo</div>
+              <div className="text-[20px]">{item?.title}</div>
               <div>
-                <h2>asd</h2>
+                <Suspense fallback={"carregando..."}>
+                  <h2>{item?.subtitle}</h2>
+                </Suspense>
+              </div>
+              <div>
+                <h2>{item?.price}</h2>
               </div>
             </div>
             <button>
@@ -33,6 +48,7 @@ export default function Page() {
           </div>
         </div>
       </Container>
+      
     </>
   );
 }
