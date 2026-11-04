@@ -39,22 +39,26 @@ export function Heading() {
         </nav>
 
         <div className="flex items-center gap-1">
-          <button
-            type="button"
-            aria-label="Favoritos"
-            title="Favoritos"
-            className="grid size-10 place-items-center rounded-full text-[#2e2020] transition-colors hover:bg-[#f4f7f7] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#28616b]"
-          >
-            <IoMdHeartEmpty size={22} />
-          </button>
-          <button
-            type="button"
-            aria-label="Carrinho"
-            title="Carrinho"
-            className="grid size-10 place-items-center rounded-full text-[#202b2e] transition-colors hover:bg-[#f4f7f7] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#28616b]"
-          >
-            <PiShoppingCartLight size={22} />
-          </button>
+          <Link href={"/favorites"}>
+            <button
+              type="button"
+              aria-label="Favoritos"
+              title="Favoritos"
+              className="grid size-10 place-items-center rounded-full text-[#2e2020] transition-colors hover:bg-[#f4f7f7] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#28616b]"
+            >
+              <IoMdHeartEmpty size={22} />
+            </button>
+          </Link>
+          <Link href={"/shop"}>
+            <button
+              type="button"
+              aria-label="Carrinho"
+              title="Carrinho"
+              className="grid size-10 place-items-center rounded-full text-[#202b2e] transition-colors hover:bg-[#f4f7f7] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#28616b]"
+            >
+              <PiShoppingCartLight size={22} />
+            </button>
+          </Link>
         </div>
       </div>
     </header>

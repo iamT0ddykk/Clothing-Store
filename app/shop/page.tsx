@@ -1,0 +1,32 @@
+import { Card } from "../Components/Card";
+import { PresetComponent } from "../Components/PresetComponent";
+import { itemsInfo } from "../items/itemsInfo";
+
+export default function Shop() {
+  const saldo = 220;
+  return (
+    <>
+      <PresetComponent>
+        <div className="p-5">
+          {" "}
+          <h1 className="text-4xl font-bold">Seu saldo : {saldo}R$</h1>
+          <h1 className="text-4xl font-bold">Comprou Recentemente</h1>
+          <div className="flex">
+            {itemsInfo.map((item) => {
+              return (
+                <Card
+                  key={item.id}
+                  img={item.img}
+                  title={item.title}
+                  subtitle={item.subtitle}
+                  price={item.price}
+                  id={item.id}
+                ></Card>
+              );
+            })}
+          </div>
+        </div>
+      </PresetComponent>
+    </>
+  );
+}
